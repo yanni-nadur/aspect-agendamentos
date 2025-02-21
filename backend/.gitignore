@@ -1,0 +1,36 @@
+# Node modules
+/node_modules/
+
+# Build output
+/dist/
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# IDE and editor settings
+.vscode/
+.idea/
+
+# NPM logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.swp
+*.swo
+
+# Nodemon runtime
+pids/
+*.pid
+*.seed
+
+# OS-specific files (Windows/macOS)
+.DS_Store
+Thumbs.db
