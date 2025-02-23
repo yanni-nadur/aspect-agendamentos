@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { AppDataSource } from "./data-source";
+import { Exam } from "./entities/Exam";
 
 const app = express();
 const port = 3210;
@@ -9,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 AppDataSource.initialize()
-  .then(() => {
+  .then(async () => {
     console.log("Conexão com o database OK");
 
     app.listen(port, () => {
