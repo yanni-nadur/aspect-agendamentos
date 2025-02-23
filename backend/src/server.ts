@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import { AppDataSource } from "./data-source";
-import { Exam } from "./entities/Exam";
 
 const app = express();
 const port = 3210;
