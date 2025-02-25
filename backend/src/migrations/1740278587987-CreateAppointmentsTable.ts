@@ -22,8 +22,13 @@ export class CreateAppointmentsTable1740278587987 implements MigrationInterface 
                     type: 'int',
                 },
                 {
-                    name: 'appointmentDate',
+                    name: 'appointment_date',
                     type: 'date',
+                },
+                {
+                    name: 'notes',
+                    type: 'text',
+                    isNullable: true,
                 },
             ],
             foreignKeys: [

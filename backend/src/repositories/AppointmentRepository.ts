@@ -16,11 +16,16 @@ export class AppointmentRepository {
 	}
 
 	async findById(id: number): Promise<Appointment | null> {
-		return this.repo.findOneBy({ id });
+		return this.repo.findOne({
+			where: { id },
+			relations: ["user", "exam"],
+		});
 	}
 
 	async findAll(): Promise<Appointment[]> {
-		return this.repo.find();
+		return this.repo.find({
+			relations: ["user", "exam"],
+		});
 	}
 
 	async delete(id: number): Promise<void> {

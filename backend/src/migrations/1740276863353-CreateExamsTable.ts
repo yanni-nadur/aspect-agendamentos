@@ -18,8 +18,8 @@ export class CreateExamsTable1740276863353 implements MigrationInterface {
                     type: 'varchar',
                 },
                 {
-                    name: 'date',
-                    type: 'date',
+                    name: 'specialty',
+                    type: 'varchar',
                 },
             ]
         }));

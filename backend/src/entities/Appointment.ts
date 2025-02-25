@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "t
 import { User } from "./User";
 import { Exam } from "./Exam";
 
-@Entity()
+@Entity({name: "appointments"})
 export class Appointment {
   @PrimaryGeneratedColumn()
   id: number;
@@ -15,7 +15,7 @@ export class Appointment {
   @JoinColumn({ name: "exam_id" })
   exam: Exam;
 
-  @Column("date")
+  @Column("date", { name: "appointment_date" })
   appointmentDate: string;
 
   @Column({ nullable: true })
