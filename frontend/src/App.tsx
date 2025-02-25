@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import { TestAPI } from "./components/TestAPI";
+import { AppRouter } from "./router";
+import { AppointmentProvider } from "./context/AppointmentContext";
+
+
 import './App.css'
 
 function App() {
-  // const [count, setCount] = useState(0)
 
-  return (
-    <div>
-      <h1>Teste de API</h1>
-      <TestAPI />
-    </div>
-  )
+	return (
+		<AppointmentProvider>
+			<AppRouter />
+		</AppointmentProvider>
+	);
 }
 
-export default App
+export default App;
