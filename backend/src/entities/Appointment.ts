@@ -17,4 +17,7 @@ export class Appointment {
 
   @Column("date")
   appointmentDate: string;
+
+  @Column({ nullable: true })
+  notes: string;
 }

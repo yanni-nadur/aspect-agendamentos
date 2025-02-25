@@ -14,14 +14,14 @@ export class AppointmentService {
         this.examRepository = new ExamRepository();
     }
 
-    async createAppointment(userId: number, examId: number, appointmentDate: string): Promise<Appointment> {
+    async createAppointment(userId: number, examId: number, appointmentDate: string, notes?: string): Promise<Appointment> {
         const user = await this.userRepository.findById(userId);
         if (!user) throw new Error("Usuário não encontrado.");
 
         const exam = await this.examRepository.findById(examId);
         if (!exam) throw new Error("Exame não encontrado.");
 
-        return this.appointmentRepository.create({ user, exam, appointmentDate });
+        return this.appointmentRepository.create({ user, exam, appointmentDate, notes });
     }
 
     async getAppointmentById(id: number): Promise<Appointment | null> {
@@ -30,5 +30,9 @@ export class AppointmentService {
 
     async listAppointments(): Promise<Appointment[]> {
         return this.appointmentRepository.findAll();
+    }
+
+    async deleteAppointment(id: number): Promise<boolean> {
+        return this.appointmentRepository.deleteById(id);
     }
 }
