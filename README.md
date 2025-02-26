@@ -2,6 +2,8 @@
 
 Este é um desafio técnico que visa criar uma aplicação web para gerenciamento de agendamentos de exames hospitalares. O objetivo é permitir que os usuários visualizem exames disponíveis, adicionem novos agendamentos e excluam agendamentos existentes.
 
+[Link para o projeto](https://aspect-frontend.vercel.app)
+
 ## Funcionalidades
 
 ### 1. Gerenciamento de Exames
