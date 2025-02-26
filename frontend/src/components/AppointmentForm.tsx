@@ -53,7 +53,7 @@ export const AppointmentForm = () => {
 		<form onSubmit={handleSubmit} className="flex flex-col gap-y-6 bg-white rounded-2xl h-[80vh] text-black p-10 shadow-lg">
 			<h2 className="text-xl font-semibold text-center">Agendar Exame</h2>
 
-			<label className="flex flex-col">
+			<label className="flex flex-col text-left gap-y-2">
 				Usuário:
 				<select className="border rounded p-2" value={userId} onChange={(e) => setUserId(e.target.value)} required>
 					<option value="">Selecione um usuário</option>
@@ -65,7 +65,7 @@ export const AppointmentForm = () => {
 				</select>
 			</label>
 
-			<label className="flex flex-col">
+			<label className="flex flex-col text-left gap-y-2">
 				Tipo de Exame:
 				<select className="border rounded p-2" value={examId} onChange={(e) => setExamId(e.target.value)} required>
 					<option value="">Selecione um exame</option>
@@ -77,17 +77,17 @@ export const AppointmentForm = () => {
 				</select>
 			</label>
 
-			<label className="flex flex-col">
+			<label className="flex flex-col text-left gap-y-2">
 				Data do Agendamento:
 				<input className="border rounded p-2" type="date" value={appointmentDate} onChange={(e) => setAppointmentDate(e.target.value)} required />
 			</label>
 
-			<label className="flex flex-col">
+			<label className="flex flex-col text-left gap-y-2">
 				Observações:
 				<textarea className="border rounded p-2" value={notes} onChange={(e) => setNotes(e.target.value)} />
 			</label>
 
-			<button type="submit" className="bg-blue-500 text-white rounded p-2 hover:bg-blue-600">
+			<button type="submit" className="bg-blue-500 text-white rounded py-3 px-10 hover:bg-blue-600 cursor-pointer w-fit">
 				Agendar
 			</button>
 		</form>
