@@ -1,14 +1,17 @@
 import "reflect-metadata";
-import "dotenv/config";
 import { DataSource } from "typeorm";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const AppDataSource = new DataSource({
 	type: "postgres",
 	url: process.env.DATABASE_URL,
 	synchronize: false,
-	logging: false,
-	entities: ["src/entities/*.ts"],
-	migrations: ["src/migrations/*.ts"],
-	migrationsRun: true,
-	ssl: process.env.DATABASE_SSL === "true" ? { rejectUnauthorized: false } : undefined,
+	logging: true,
+	entities: ["dist/entities/*.js"],
+	migrations: ["dist/migrations/*.js"],
+	ssl: {
+		rejectUnauthorized: false,
+	},
 });
