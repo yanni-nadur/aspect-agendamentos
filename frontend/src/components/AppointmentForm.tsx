@@ -29,10 +29,6 @@ export const AppointmentForm = () => {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 
-		console.log("Enviando agendamento com os valores:");
-		console.log({ userId, examId, appointmentDate, notes });
-
-
 		try {
 			await createAppointment({
 				userId: Number(userId),
