@@ -1,15 +1,14 @@
 import "reflect-metadata";
+import "dotenv/config";
 import { DataSource } from "typeorm";
 
 export const AppDataSource = new DataSource({
-  type: "postgres",
-  host: "localhost",
-  port: 5432,
-  username: "aspect_user",
-  password: "aspect123",
-  database: "aspect",
-  synchronize: true,
-  logging: false,
-  entities: ["src/entities/*.ts"],
-  migrations: ["src/migrations/*.ts"],
+	type: "postgres",
+	url: process.env.DATABASE_URL,
+	synchronize: false,
+	logging: false,
+	entities: ["src/entities/*.ts"],
+	migrations: ["src/migrations/*.ts"],
+	migrationsRun: true,
+	ssl: process.env.DATABASE_SSL === "true" ? { rejectUnauthorized: false } : undefined,
 });
